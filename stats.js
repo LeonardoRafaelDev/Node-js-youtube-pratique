@@ -1,5 +1,6 @@
 const os = require('os')
-
+//integrando o modulo logger
+const log = require('./logger')
 setInterval(() => {
       //"desempacontando" o os
       const { freemem, totalmem} = os
@@ -18,4 +19,5 @@ setInterval(() => {
       console.log("===tua memoria man===")
       console.table(stats)
 
+      log(`${JSON.stringify(stats)}\n`)
 }, 1000)
